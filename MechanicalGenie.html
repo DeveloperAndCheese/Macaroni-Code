@@ -7,12 +7,21 @@
 
 <p>Ground control to Major Tom.</p>
 
-  
-<button type="button"
-  onclick="document.getElementById("PowerballNumbers").innerHTML = rando(1, 69)">
-  Powerball</button>
+  <p id="PowerballOne"></p>
+<p id="PowerballTwo"></p>
+<p id="PowerballThree"></p>
+<p id="PowerballFour"></p>
 
-  <p id="PowerballNumbers"></p>
+<script>
+  document.getElementById("PowerballOne").innerHTML
+    = rando(1, 69)
+  document.getElementById("PowerballTwo").innerHTML
+    = rando(1, 69)
+  document.getElementById("PowerballThree").innerHTML
+    = rando(1, 69)
+  document.getElementById("PowerballFour").innerHTML
+    = rando(1, 69)
+</script>
   
 
 </html>
