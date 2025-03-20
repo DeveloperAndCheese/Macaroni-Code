@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles/nav.css">
+    <link rel="stylesheet" href="Styles/common.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>P-P-P-Powerball!</title>
+    <style>
+        .number {
+            display: inline-block;
+            font-family: "Noto Sans";
+            font-size: 24px;
+            font-weight: bold;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 50%;
+            background-color: #f1c40f;
+            color: black;
+            text-align: center;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+        }
+        .special {
+            background-color: #e74c3c;
+        }
+        body{
+            background-color: #1c3577;
+        }
+        
+    </style>
+    
+</head>
+<body>
+    
+    <h1>
+        <div class="links-wrapper">
+            <div class="nav-link">
+                <a href="index.html">Homepage</a>
+            </div>
+            <div class="nav-link">
+                <a href="powerball.html">P-P-P-Powerball!</a>
+            </div>
+        </div>
+    </h1>
+
+    <div class="powerball-wrapper">
+    <div><p>Today's Powerball numbers are:</p></div>
+
+    <div id="numbers"></div>
+
+    <script>
+        function generateNumbers() {
+            const numbersDiv = document.getElementById("numbers");
+            numbersDiv.innerHTML = ""; // Clear previous output
+
+            let numbers = new Set();
+            while (numbers.size < 5) {
+                numbers.add(Math.floor(Math.random() * 69) + 1);
+            }
+
+            let specialNumber = Math.floor(Math.random() * 29) + 1;
+
+            // Create span elements for each number
+            numbers.forEach(num => {
+                let span = document.createElement("span");
+                span.classList.add("number");
+                span.textContent = num;
+                numbersDiv.appendChild(span);
+            });
+
+            // Create span for the special number
+            let specialSpan = document.createElement("span");
+            specialSpan.classList.add("number", "special");
+            specialSpan.textContent = specialNumber;
+            numbersDiv.appendChild(specialSpan);
+        }
+
+        // Generate numbers when the page loads
+        window.onload = generateNumbers;
+    </script>
+    </div>
+
+    
+
+</body>
+</html>

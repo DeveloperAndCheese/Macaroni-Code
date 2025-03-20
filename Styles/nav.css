@@ -1,0 +1,24 @@
+.links-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    background-color: #0f1547;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin: 0px;
+    border: 0px;
+}
+
+.nav-link a{
+    font-family: "Noto Sans", sans-serif;
+    color: #ad59d4;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+.nav-link a:hover{
+    letter-spacing: 1px;
+    color: white;
+    transition: 0.5s;
+    text-decoration: none;
+}
